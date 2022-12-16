@@ -226,10 +226,11 @@ document.addEventListener("keydown", (e) => {
               face.elem.removeEventListener("transitionend", transitionend);
             };
             face.elem.addEventListener("transitionend", transitionend);
-            if (face.val === 2048)
+            if (face.val === 2048) {
               clearInterval(timerInterval);
               if (winnable)
                 wall("YOU WIN WOOHO OO OH");
+            }
           } else {
             face.x -= mx;
             face.y -= my;
@@ -273,6 +274,7 @@ function wall(text) {
   btn.onclick = e => {
       wall.remove();
       winnable = false;
+      won = false;
   }
   wall.appendChild(btn);
   btn = document.createElement("button");
