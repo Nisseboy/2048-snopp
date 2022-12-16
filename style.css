@@ -114,6 +114,10 @@ body {
   cursor: pointer;
 }
 
+.restart-button:hover {
+  opacity: 0.8;
+}
+
 .sidepanel {
   position: absolute;
   right: 0;
