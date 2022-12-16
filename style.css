@@ -142,3 +142,20 @@ body {
   font-size: 2rem;
   color: gold; 
 }
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--bg);
+  width: 80%;
+  border-radius: 1rem;
+}
+.control-title {
+  color: white;
+  margin-bottom: 0; 
+}
+.control-paragraph {
+  color: black;
+  width: 80%; 
+}
