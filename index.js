@@ -10,7 +10,8 @@ const images = {
   256: "imgs/NilsW.png",
   512: "imgs/LukasA.jpg",
   1024: "imgs/SaraD.jpg",
-  2048: "imgs/AdrianT.jpg"
+  2048: "imgs/AdrianT.jpg",
+  4096: "imgs/VictorL.jpg"
 };
 
 let fg = document.getElementsByClassName("foreground-grid")[0];
@@ -19,6 +20,17 @@ let highlighter = document.getElementsByClassName("highlighter")[0];
 let grid = [];
 let won = false;
 let winnable = true;
+
+let timer = 0;
+let timerElem = document.getElementsByClassName("timer")[0];
+let timerInterval = setInterval(()=>{
+  timer += 500;
+  let h = lpad(new Date(timer).getHours() - 1);
+  let m = lpad(new Date(timer).getMinutes());
+  let s = lpad(new Date(timer).getSeconds());
+
+  timerElem.innerText = `${h}:${m}:${s}`;
+}, 500);
 
 let score = 0;
 updateScores();
@@ -212,8 +224,10 @@ document.addEventListener("keydown", (e) => {
               face.elem.removeEventListener("transitionend", transitionend);
             };
             face.elem.addEventListener("transitionend", transitionend);
-            if (face.val === 2048 && winnable)
-              wall("YOU WIN WOOHO OO OH");
+            if (face.val === 2048)
+              clearInterval(timerInterval);
+              if (winnable)
+                wall("YOU WIN WOOHO OO OH");
           } else {
             face.x -= mx;
             face.y -= my;
@@ -295,4 +309,11 @@ function updateScores() {
     scoreElems[1].innerText = score;
     localStorage.setItem("highScore", score);
   }
+}
+
+function lpad(time) {
+    let str = String(time);
+    if (str.length == 1)
+        str = "0" + str;
+    return str;
 }
