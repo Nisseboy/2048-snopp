@@ -19,6 +19,8 @@ let highlighter = document.getElementsByClassName("highlighter")[0];
 let grid = [];
 let won = false;
 
+let score = 0;
+
 //Initalizing grid
 let bg = document.getElementsByClassName("background-grid")[0];
 for (let i = 0; i < 16; i++) {
@@ -199,6 +201,8 @@ document.addEventListener("keydown", (e) => {
             let temp = grid[face.x + face.y * 4];
             grid[face.x + face.y * 4] = undefined;
             face.val *= 2;
+            score += face.val;
+            updateScores();
             const transitionend = (e) => {
               temp.elem.remove();
               face.elem.src = images[face.val];
@@ -262,4 +266,17 @@ function restart() {
   Array.from(document.getElementsByClassName("face")).forEach((elem)=>{elem.remove()});
   spawnBlock();
   spawnBlock();
+  
+  score = 0;
+  updateScores();
+}
+
+function updateScores() {
+  let scoreElems = Array.from(document.getElementsByClassName("score")).map(elem=>elem.firstChild);
+  scoreElems[0].innerText = score;
+  scoreElems[1].innerText = localStorage.getItem("highScore");
+  if (localStorage.getItem("highScore") < score) {
+    scoreElems[1].innerText = score;
+    localStorage.setItem("highScore", score);
+  }
 }
