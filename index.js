@@ -238,14 +238,17 @@ function wall(text) {
   btn.style.borderRadius = "1rem";
   btn.onclick = e => {
       wall.remove();
-      won = false;
-      for (let i = 0; i < grid.length; i++) {
-          grid[i] = undefined;
-          Array.from(document.getElementsByClassName("face")).forEach((elem)=>{elem.remove()});
-          spawnBlock();
-          spawnBlock();
-      }
+      restart();
   }
   wall.appendChild(btn);
   document.body.appendChild(wall);
+}
+function restart() {
+  won = false;
+  for (let i = 0; i < grid.length; i++) {
+    grid[i] = undefined;
+    Array.from(document.getElementsByClassName("face")).forEach((elem)=>{elem.remove()});
+    spawnBlock();
+    spawnBlock();
+  }
 }
