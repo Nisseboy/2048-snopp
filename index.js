@@ -28,6 +28,9 @@ for (let i = 0; i < 16; i++) {
 }
 
 faceSize = bg.firstChild.getBoundingClientRect().width;
+window.onresize = e=>{  
+  faceSize = bg.firstChild.getBoundingClientRect().width;
+};
 
 //Facewall
 let fw = document.getElementsByClassName("face-wall")[0];
