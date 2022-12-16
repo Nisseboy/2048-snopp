@@ -5,7 +5,7 @@ const images = {
   8: "imgs/AlecZ.jpg",
   16: "imgs/WiggoT.jpg",
   32: "imgs/XanderA.jpg",
-  64: "imgs/WilliamH.jpg",
+  64: "imgs/LilyR.png",
   128: "imgs/WilliamB.jpg",
   256: "imgs/NilsW.png",
   512: "imgs/LukasA.jpg",
