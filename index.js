@@ -67,7 +67,7 @@ function spawnBlock(x, y) {
     y = temp.y;
   }
 
-  let n = 2;
+  let n = (Math.random() <= 0.25)?4:2;
 
   let face = document.createElement("img");
   face.className = "face";
