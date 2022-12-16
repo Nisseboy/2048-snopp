@@ -11,7 +11,8 @@ const images = {
   512: "imgs/LukasA.jpg",
   1024: "imgs/SaraD.jpg",
   2048: "imgs/AdrianT.jpg",
-  4096: "imgs/VictorL.jpeg"
+  4096: "imgs/Secrish.png",
+  8192: "imgs/VictorL.jpeg"
 };
 
 let fg = document.getElementsByClassName("foreground-grid")[0];
@@ -67,7 +68,7 @@ for (let i in images) {
   holder.className = "face-wall-holder";
 
   let image = document.createElement("img");
-  image.src = img;
+  image.src = (i == 4096)?"imgs/fragen.png":img;
   holder.appendChild(image);
 
   let text = document.createElement("h1");
