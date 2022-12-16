@@ -17,6 +17,7 @@ let fg = document.getElementsByClassName("foreground-grid")[0];
 let highlighter = document.getElementsByClassName("highlighter")[0];
 
 let grid = [];
+let won = false;
 
 //Initalizing grid
 let bg = document.getElementsByClassName("background-grid")[0];
@@ -129,7 +130,7 @@ document.addEventListener("keydown", (e) => {
 
   let og = arrCopy(grid);
 
-  if (dx || dy) {
+  if ((dx || dy) && !won) {
     e.preventDefault();
     let delta = 0;
     let ver = false;
@@ -193,6 +194,7 @@ document.addEventListener("keydown", (e) => {
               face.elem.removeEventListener("transitionend", transitionend);
             };
             face.elem.addEventListener("transitionend", transitionend);
+            wall("YOU WIN WOOHO OO OH");
           } else {
             face.x -= mx;
             face.y -= my;
@@ -206,14 +208,6 @@ document.addEventListener("keydown", (e) => {
         }
       }
     }
-    let full = true;
-    for (let i = 0; i < grid.length; i++) {
-      if(grid[i] === undefined)
-         full = false;
-    }
-    if (full) {
-      wall("You lose bit ch");
-    }
     if ((dx || dy) && !arrComp(og, grid)) {
       spawnBlock();
     }
@@ -223,8 +217,9 @@ document.addEventListener("keydown", (e) => {
 
 function wall(text) {
   let wall = document.createElement("div");
+  won = true;
   wall.className = "background-grid";
-  wall.style.backgroundColor = "rgb(0 0 0 / 0.7)";
+  wall.style.backgroundColor = "rgb(212 175 55 / 0.7)";
   wall.style.color = "white";
   wall.style.fontSize = "3rem";
   wall.innerText = text;
@@ -242,7 +237,13 @@ function wall(text) {
   btn.style.borderRadius = "1rem";
   btn.onclick = e => {
       wall.remove();
-      
+      won = false;
+      for (let i = 0; i < grid.length; i++) {
+          grid[i] = undefined;
+          Array.from(document.getElementsByClassName("face")).forEach((elem)=>{elem.remove()});
+          spawnBlock();
+          spawnBlock();
+      }
   }
   wall.appendChild(btn);
   document.body.appendChild(wall);
