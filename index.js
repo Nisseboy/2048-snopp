@@ -18,6 +18,7 @@ let highlighter = document.getElementsByClassName("highlighter")[0];
 
 let grid = [];
 let won = false;
+let winnable = true;
 
 let score = 0;
 updateScores();
@@ -211,7 +212,7 @@ document.addEventListener("keydown", (e) => {
               face.elem.removeEventListener("transitionend", transitionend);
             };
             face.elem.addEventListener("transitionend", transitionend);
-            if (face.val === 2048)
+            if (face.val === 2048 && winnable)
               wall("YOU WIN WOOHO OO OH");
           } else {
             face.x -= mx;
@@ -246,6 +247,19 @@ function wall(text) {
   wall.style.justifyContent = "center";
   wall.style.flexDirection = "column";
   let btn = document.createElement("button");
+  btn.innerText = "Continue";
+  btn.style.width = "13rem";
+  btn.style.height = "4rem";
+  btn.style.fontSize = "3rem";
+  btn.style.color = "white";
+  btn.style.backgroundColor = "gold";
+  btn.style.borderRadius = "1rem";
+  btn.onclick = e => {
+      wall.remove();
+      winnable = false;
+  }
+  wall.appendChild(btn);
+  btn = document.createElement("button");
   btn.innerText = "Restart";
   btn.style.width = "12rem";
   btn.style.height = "4rem";
