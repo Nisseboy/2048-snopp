@@ -30,6 +30,14 @@ for (let i = 0; i < 16; i++) {
 faceSize = bg.firstChild.getBoundingClientRect().width;
 window.onresize = e=>{  
   faceSize = bg.firstChild.getBoundingClientRect().width;
+  for (let i = 0; i < grid.length; i++) {
+    if (grid[i] === undefined)
+       continue;
+    let face = grid[i];
+    face.elem.style.width = faceSize + "px";
+    face.elem.style.left = face.x * (faceSize + 8) + "px";
+    face.elem.style.top = face.y * (faceSize + 8) + "px";
+  }
 };
 
 //Facewall
