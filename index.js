@@ -245,7 +245,9 @@ document.addEventListener("keydown", (e) => {
       }
     }
     if ((dx || dy) && !arrComp(og, grid)) {
-      spawnBlock();
+      setTimeout(()=>{
+        spawnBlock();
+      }, 200);
     }
   }
 });
