@@ -194,7 +194,8 @@ document.addEventListener("keydown", (e) => {
               face.elem.removeEventListener("transitionend", transitionend);
             };
             face.elem.addEventListener("transitionend", transitionend);
-            wall("YOU WIN WOOHO OO OH");
+            if (face.val === 2048)
+              wall("YOU WIN WOOHO OO OH");
           } else {
             face.x -= mx;
             face.y -= my;
