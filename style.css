@@ -103,14 +103,33 @@ body {
 }
 
 .restart-button {
-  position: absolute;
-  top: 1rem;
-  width: 6rem;
+  width: 50%;
   height: 2rem;
+  margin: 8px;
   border-radius: 0.5rem;
   background: gold;
   color: black;
   font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
+}
+
+.sidepanel {
+  position: absolute;
+  right: 0;
+  width: 20%;
+  height: 80%;
+  background-color: var(--fg);
+  border: 8px solid var(--bg);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column; 
+}
+
+.score {
+  width: 80%;
+  height: 3rem;
+  background: var(--bg);
+  border-radius: 1rem; 
 }
