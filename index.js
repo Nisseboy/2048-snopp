@@ -273,7 +273,7 @@ function restart() {
 }
 
 function updateScores() {
-  let scoreElems = Array.from(document.getElementsByClassName("score")).map(elem=>elem.firstChild);
+  let scoreElems = Array.from(document.getElementsByClassName("score")).map(elem=>elem.lastChild);
   scoreElems[0].innerText = score;
   scoreElems[1].innerText = localStorage.getItem("highScore");
   if (localStorage.getItem("highScore") < score) {
