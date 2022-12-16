@@ -20,6 +20,7 @@ let grid = [];
 let won = false;
 
 let score = 0;
+updateScores();
 
 //Initalizing grid
 let bg = document.getElementsByClassName("background-grid")[0];
