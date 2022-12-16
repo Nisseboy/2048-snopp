@@ -186,9 +186,9 @@ document.addEventListener("keydown", (e) => {
           ) {
             let temp = grid[face.x + face.y * 4];
             grid[face.x + face.y * 4] = undefined;
+            face.val *= 2;
             const transitionend = (e) => {
               temp.elem.remove();
-              face.val *= 2;
               face.elem.src = images[face.val];
               face.elem.removeEventListener("transitionend", transitionend);
             };
