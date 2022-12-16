@@ -101,3 +101,16 @@ body {
 
   margin: 0.5rem;
 }
+
+.restart-button {
+  position: absolute;
+  top: 1rem;
+  width: 6rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  background: gold;
+  color: black;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
