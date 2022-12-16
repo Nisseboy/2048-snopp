@@ -1,7 +1,7 @@
 let faceSize = 0;
 const images = {
   2: "imgs/AxelW.jpg",
-  4: "imgs/MelvinB.jpg",
+  4: "imgs/AlessiaM.jpg",
   8: "imgs/AlecZ.jpg",
   16: "imgs/WiggoT.jpg",
   32: "imgs/XanderA.jpg",
