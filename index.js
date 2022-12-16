@@ -119,7 +119,6 @@ spawnBlock();
 spawnBlock();
 
 document.addEventListener("keydown", (e) => {
-  e.preventDefault();
   let dx =
     (e.key === "ArrowRight" || e.key === "d") -
     (e.key === "ArrowLeft" || e.key === "a");
@@ -131,6 +130,7 @@ document.addEventListener("keydown", (e) => {
   let og = arrCopy(grid);
 
   if (dx || dy) {
+    e.preventDefault();
     let delta = 0;
     let ver = false;
 
