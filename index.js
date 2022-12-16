@@ -201,7 +201,7 @@ document.addEventListener("keydown", (e) => {
           face.elem.style.left = face.x * (faceSize + 8) + "px";
           face.elem.style.top = face.y * (faceSize + 8) + "px";
 
-          grid[index] = face;
+          grid[face.x + face.y * 4] = face;
           break;
         }
       }
