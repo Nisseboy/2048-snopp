@@ -23,14 +23,16 @@ let winnable = true;
 
 let timer = 0;
 let timerElem = document.getElementsByClassName("timer")[0];
-let timerInterval = setInterval(()=>{
+let timerInterval = setInterval(timerFunction, 500);
+
+function timerFunction() {
   timer += 500;
   let h = lpad(new Date(timer).getHours() - 1);
   let m = lpad(new Date(timer).getMinutes());
   let s = lpad(new Date(timer).getSeconds());
 
-  timerElem.innerText = `${h}:${m}:${s}`;
-}, 500);
+  timerElem.innerText = `${h}:${m}:${s}`; 
+}
 
 let score = 0;
 updateScores();
@@ -299,6 +301,9 @@ function restart() {
   
   score = 0;
   updateScores();
+  
+  timer = 0;
+  timerInterval = setInterval(timerFunction, 500);
 }
 
 function updateScores() {
