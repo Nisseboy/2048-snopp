@@ -141,6 +141,9 @@ document.addEventListener("keydown", (e) => {
   let dy =
     (e.key === "ArrowDown" || e.key === "s") -
     (e.key === "ArrowUp" || e.key === "w");
+  
+  if (e.key == "r")
+    restart();
 
   let og = arrCopy(grid);
 
