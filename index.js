@@ -247,8 +247,8 @@ function restart() {
   won = false;
   for (let i = 0; i < grid.length; i++) {
     grid[i] = undefined;
-    Array.from(document.getElementsByClassName("face")).forEach((elem)=>{elem.remove()});
-    spawnBlock();
-    spawnBlock();
   }
+  Array.from(document.getElementsByClassName("face")).forEach((elem)=>{elem.remove()});
+  spawnBlock();
+  spawnBlock();
 }
