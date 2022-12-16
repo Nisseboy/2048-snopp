@@ -163,3 +163,18 @@ body {
   color: black;
   width: 80%; 
 }
+
+.timer {
+  display: flex;
+  width: 80%;
+  height: 2rem;
+  background: var(--bg);
+  border-radius: 1rem;
+  position: absolute;
+  bottom: 0;
+  margin: 1rem;
+  align-items: center;
+  justify-content: center;
+  color: gold;
+  font-size: 2rem; 
+}
