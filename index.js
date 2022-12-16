@@ -305,6 +305,7 @@ function restart() {
   updateScores();
   
   timer = 0;
+  clearInterval(timerInterval);
   timerInterval = setInterval(timerFunction, 500);
 }
 
