@@ -178,11 +178,9 @@ document.addEventListener("keydown", (e) => {
 
     grid = [];
 
-    console.log("----------------------");
     for (let i = 0; i < sGrid.length; i++) {
       let face = sGrid[i];
       if (!face) continue;
-      console.log(face.x, face.y);
       while (true) {
         let index = face.x + face.y * 4;
         face.x += mx;
