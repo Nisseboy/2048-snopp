@@ -206,8 +206,44 @@ document.addEventListener("keydown", (e) => {
         }
       }
     }
+    let full = true;
+    for (let i = 0; i < grid.length; i++) {
+      if(grid[i] === undefined)
+         full = false;
+    }
+    if (full) {
+      wall("You lose bit ch");
+    }
     if ((dx || dy) && !arrComp(og, grid)) {
       spawnBlock();
     }
   }
 });
+
+
+function wall(text) {
+  let wall = document.createElement("div");
+  wall.className = "background-grid";
+  wall.style.backgroundColor = "rgb(0 0 0 / 0.7)";
+  wall.style.color = "white";
+  wall.style.fontSize = "3rem";
+  wall.innerText = text;
+  wall.style.display = "flex";
+  wall.style.alignItems = "center";
+  wall.style.justifyContent = "center";
+  wall.style.flexDirection = "column";
+  let btn = document.createElement("button");
+  btn.innerText = "Restart";
+  btn.style.width = "12rem";
+  btn.style.height = "4rem";
+  btn.style.fontSize = "3rem";
+  btn.style.color = "white";
+  btn.style.backgroundColor = "var(--bg)";
+  btn.style.borderRadius = "1rem";
+  btn.onclick = e => {
+      wall.remove();
+      
+  }
+  wall.appendChild(btn);
+  document.body.appendChild(wall);
+}
