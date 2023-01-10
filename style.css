@@ -14,6 +14,10 @@ body {
   justify-content: center;
 }
 
+body {
+  background-color: #99f7e4;
+}
+
 .background-grid,
 .foreground-grid {
   height: 80%;
