@@ -27,8 +27,8 @@ for (let i = 0; i < randomFaces; i++) {
   let randomFace = document.createElement("img");
   randomFace.className = "random-face";
   randomFace.src = src;
-  randomFace.style.left = Math.floor(Math.random() * 100) + "%";
-  randomFace.style.top = Math.floor(Math.random() * 100) + "%";
+  randomFace.style.left = Math.floor(Math.random() * 90) + "%";
+  randomFace.style.top = Math.floor(Math.random() * 90) + "%";
   randomFace.style.transform = `rotate(${Math.floor(Math.random() * 360)}deg)`;
   randomFacesElem.appendChild(randomFace);
 }
