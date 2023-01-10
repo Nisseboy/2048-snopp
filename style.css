@@ -200,4 +200,6 @@ body {
   height: 4rem;
 
   position: absolute;
+
+  border-radius: 1rem;
 }
