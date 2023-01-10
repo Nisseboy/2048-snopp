@@ -87,7 +87,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  box-shadow: 4px 4px rgb(0 0 0 / 30%), -4px -4px rgb(255 255 255 / 40%);
 }
 .face-wall-holder {
   width: 100%;
@@ -103,6 +102,7 @@ body {
   font-size: 2rem;
 
   border-radius: 1rem;
+  box-shadow: 4px 4px rgb(0 0 0 / 30%), -4px -4px rgb(255 255 255 / 40%);
 }
 .face-wall-holder img {
   width: 25%;
