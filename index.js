@@ -20,7 +20,7 @@ const images = {
 const randomFaces = 26;
 const randomFacesElem = document.getElementsByClassName("random-faces")[0];
 
-for (let i = 0; i < randomFaces.length; i++) {
+for (let i = 0; i < randomFaces; i++) {
   let srces = Object.values(images);
   let src = srces[Math.floor(Math.random * srces.length)];
 
