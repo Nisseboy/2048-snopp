@@ -1,3 +1,5 @@
+
+
 let faceSize = 0;
 const images = {
   2: "imgs/AxelW.jpg",
@@ -14,6 +16,22 @@ const images = {
   4096: "imgs/Secrish.png",
   8192: "imgs/VictorL.jpeg"
 };
+
+const randomFaces = 26;
+const randomFacesElem = document.getElementsByClassName("random-faces")[0];
+
+for (let i = 0; i < randomFaces.length; i++) {
+  let srces = Object.values(images);
+  let src = srces[Math.floor(Math.random * srces.length)];
+
+  let randomFace = document.createElement("img");
+  randomFace.className = "random-face";
+  randomFace.src = src;
+  randomFace.style.left = Math.floor(Math.random() * window.innerWidth) + "px";
+  randomFace.style.top = Math.floor(Math.random() * window.innerHeight) + "px";
+  randomFace.style.transform = `rotate(${Math.floor(Math.random() * 360)}deg)`;
+  randomFacesElem.appendChild(randomFace);
+}
 
 let fg = document.getElementsByClassName("foreground-grid")[0];
 let highlighter = document.getElementsByClassName("highlighter")[0];
