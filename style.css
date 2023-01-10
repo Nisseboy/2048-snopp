@@ -60,7 +60,7 @@ body {
 }
 
 .highlighter {
-  position: absolute;
+  position: fixed;
   background-color: rgb(0 0 0 / 0.4);
   z-index: 999999;
 
