@@ -168,9 +168,14 @@ body {
 }
 .controls-paragraph {
   color: white;
+  line-height: 2;
 }
 .control-key {
-  color: white;
+  background-color: #fdc33e;
+  color: black;
+  padding: 4px;
+  border-radius: 0.5rem;
+  border: 1px solid black;
 }
 .control-title {
   color: white;
