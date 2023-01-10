@@ -17,7 +17,7 @@ const images = {
   8192: "imgs/VictorL.jpeg"
 };
 
-const randomFaces = 26;
+const randomFaces = 50;
 const randomFacesElem = document.getElementsByClassName("random-faces")[0];
 
 for (let i = 0; i < randomFaces; i++) {
@@ -27,8 +27,8 @@ for (let i = 0; i < randomFaces; i++) {
   let randomFace = document.createElement("img");
   randomFace.className = "random-face";
   randomFace.src = src;
-  randomFace.style.left = Math.floor(Math.random() * window.innerWidth) + "px";
-  randomFace.style.top = Math.floor(Math.random() * window.innerHeight) + "px";
+  randomFace.style.left = Math.floor(Math.random() * 100) + "%";
+  randomFace.style.top = Math.floor(Math.random() * 100) + "%";
   randomFace.style.transform = `rotate(${Math.floor(Math.random() * 360)}deg)`;
   randomFacesElem.appendChild(randomFace);
 }
