@@ -166,13 +166,15 @@ body {
   width: 80%;
   border-radius: 1rem;
 }
+.controls-paragraph {
+  
+}
+.control-key {
+
+}
 .control-title {
   color: white;
   margin-bottom: 0; 
-}
-.control-paragraph {
-  color: black;
-  width: 80%; 
 }
 
 .timer {
